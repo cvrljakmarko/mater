@@ -23,13 +23,13 @@ const toNumber = (idStr) => {
 const toId = (n) => String(n).padStart(4, '0')
 
 // --- Load once into memory ---
-function loadInitialTariffs() {
+function loadInitialUsers() {
     const file = path.join(__dirname, 'data/users.json')
     const raw = fs.readFileSync(file, 'utf-8')
     return JSON.parse(raw)
 }
 
-let users = loadInitialTariffs()
+let users = loadInitialUsers()
 
 // Compute next number from current max
 let nextSeq = users.reduce((max, t) => Math.max(max, toNumber(t.id)), 0) + 1
