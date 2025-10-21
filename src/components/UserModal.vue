@@ -1,7 +1,7 @@
 <template>
     <v-dialog v-model="isOpen" max-width="420" @update:model-value="handleDialogChange">
         <v-card>
-            <v-card-title>{{ isEdit ? `Edit User (${user?.id})` : 'Create User' }}</v-card-title>
+            <v-card-title>{{ isEdit ? `Edit User (${user?.name})` : 'Create User' }}</v-card-title>
             <v-card-text>
                 <v-text-field v-model.trim="formData.name" label="Name" variant="outlined"
                     :error="showErrors && !!nameError" />
